@@ -1,9 +1,8 @@
 
 # Build
 ```bash
-export RUSTFLAGS='-C target-feature=+atomics,+bulk-memory,+mutable-globals'
 
-rustup run nightly wasm-pack build . -- -Z build-std=std,panic_abort,core,alloc -Z build-std-features=panic_immediate_abort
+./build.sh
 
 npm login
 npm publish --access public
