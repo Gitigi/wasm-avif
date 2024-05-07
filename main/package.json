@@ -4,7 +4,7 @@
     "gitigi <stephengitigi@gmail.com>"
   ],
   "description": "avif encoder",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "license": "MIT OR Apache-2.0",
   "repository": {
     "type": "git",
