@@ -4,7 +4,7 @@
     "gitigi <stephengitigi@gmail.com>"
   ],
   "description": "avif encoder",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "license": "MIT OR Apache-2.0",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "dist/wasm-avif.js"
   ],
   "module": "dist/wasm-avif.js",
-  "types": "dist/avif.d.ts",
+  "types": "dist/wasm-avif.d.ts",
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
