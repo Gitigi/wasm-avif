@@ -1,4 +1,5 @@
-import AvifWorker from './worker?worker&inline'
+import { AvifWorker } from "../../worker/pkg";
+// import AvifWorker from './worker?worker&inline'
 
 export class Encoder {
   constructor() {

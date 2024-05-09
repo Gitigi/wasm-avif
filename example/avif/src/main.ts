@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 // import { encode } from "../../../pkg"
 // import { encode } from 'wasm-avif';
+// import { Encoder } from 'wasm-avif';
 import { Encoder } from "../../../main"
 
 (async function main() {
@@ -26,7 +27,7 @@ import { Encoder } from "../../../main"
   ctx.drawImage(pic, 0, 0, pic.width, pic.height)
 
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-  const avif = await encoder.encode(new Uint8Array(imageData.data.buffer), imageData.width, imageData.height)
+  const avif = await encoder.encode(new Uint8Array(imageData.data.buffer), imageData.width, imageData.height, 8)
   const blob = new Blob([avif], {type: "image/avif"})
   const file = new File([blob], 'untitled', { type: blob.type })
   const objectURL = URL.createObjectURL(file);
