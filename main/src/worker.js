@@ -8,6 +8,6 @@ onmessage = async ({data: {id, data}}) => {
     initialized = true
   }
 
-  const res = encode(data.buffer, data.width, data.height)
+  const res = encode(data.buffer, data.width, data.height, data.speed)
   postMessage({id, data: res});
 };

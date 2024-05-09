@@ -5,7 +5,7 @@ use wasm_bindgen::prelude::*;
 use imgref::ImgVec;
 
 #[wasm_bindgen]
-pub fn encode(buffer: Vec<u8>, width: usize, height: usize) -> Vec<u8> {
+pub fn encode(buffer: Vec<u8>, width: usize, height: usize, speed: u8) -> Vec<u8> {
     utils::set_panic_hook();
 
     let a: Vec<RGBA8>  = buffer.chunks(4).map(|p| RGBA8::new(p[0], p[1], p[2], p[3])).collect();
@@ -13,7 +13,7 @@ pub fn encode(buffer: Vec<u8>, width: usize, height: usize) -> Vec<u8> {
     let img: ImgVec<RGBA8> = Img::new(a, width, height);
     let res = Encoder::new()
         .with_quality(50.)
-        .with_speed(8)
+        .with_speed(speed)
         .encode_rgba(img.as_ref()).unwrap();
 
     res.avif_file
