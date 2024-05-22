@@ -30,7 +30,7 @@ const WORKER_BASE64: &str = {
         self.onmessage = async event => {
             // This will queue further commands up until the module is fully initialised:
             await initialised;
-            const res = wasm_bindgen.encode(event.data.data.buffer, event.data.data.width, event.data.data.height, event.data.data.speed);
+            const res = wasm_bindgen.encode(event.data.data.buffer, event.data.data.width, event.data.data.height, event.data.data.speed, event.data.data.quality);
             postMessage({id: event.data.id, data: res});
         };
     "#;

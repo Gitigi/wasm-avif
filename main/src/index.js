@@ -13,18 +13,21 @@ export class Encoder {
   * @param {Uint8Array} buffer
   * @param {number} width
   * @param {number} height
-  * @param {number} speed
+  * @param {Object} options
+  * @param {number} options.speed
+  * @param {number} options.quality
   * @returns {Promise<Uint8Array>}
   */
-  async encode(buffer, width, height, speed = 4) {
+  async encode(buffer, width, height, options) {
     const id = `request-${this.requestsCounter++}`;
  
     return new Promise((resolve) => {
       this.requests[id] = (data) => {
           resolve(data);
       };
-
-      this.worker.postMessage({id, data: {buffer, width, height, speed}})
+      const speed = options?.speed || 4
+      const quality = options?.quality || 50.0
+      this.worker.postMessage({id, data: {buffer, width, height, speed, quality}})
     });
   }
 
