@@ -9,12 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@laynezh/vite-plugin-lib-assets": "^0.5.21",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-top-level-await": "^1.4.1",
     "vite-plugin-wasm": "^3.3.0"
   },
   "dependencies": {
-    "wasm-avif": "^0.1.0"
+    "wasm-avif": "0.1.0-alpha.6"
   }
 }
