@@ -15,7 +15,7 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2.84"
-ravif = { version = "0.11" }
+ravif = { version = "0.12" }
 imgref = "1.9.4"
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
